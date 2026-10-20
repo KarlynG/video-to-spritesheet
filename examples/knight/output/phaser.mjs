@@ -1,0 +1,17 @@
+// Import these helpers into a Phaser scene. Load first; create the animation after loading.
+const pages = [{"index": 0, "image": "sheet-001.png", "atlas": "atlas-001.json"}];
+const sequence = [{"page": 0, "frame": "frame_000000"}, {"page": 0, "frame": "frame_000001"}, {"page": 0, "frame": "frame_000002"}, {"page": 0, "frame": "frame_000003"}, {"page": 0, "frame": "frame_000004"}, {"page": 0, "frame": "frame_000005"}, {"page": 0, "frame": "frame_000006"}, {"page": 0, "frame": "frame_000007"}, {"page": 0, "frame": "frame_000008"}, {"page": 0, "frame": "frame_000009"}, {"page": 0, "frame": "frame_000010"}, {"page": 0, "frame": "frame_000011"}, {"page": 0, "frame": "frame_000012"}, {"page": 0, "frame": "frame_000013"}, {"page": 0, "frame": "frame_000014"}, {"page": 0, "frame": "frame_000015"}, {"page": 0, "frame": "frame_000016"}, {"page": 0, "frame": "frame_000017"}, {"page": 0, "frame": "frame_000018"}, {"page": 0, "frame": "frame_000019"}, {"page": 0, "frame": "frame_000020"}, {"page": 0, "frame": "frame_000021"}, {"page": 0, "frame": "frame_000022"}, {"page": 0, "frame": "frame_000023"}, {"page": 0, "frame": "frame_000024"}, {"page": 0, "frame": "frame_000025"}, {"page": 0, "frame": "frame_000026"}, {"page": 0, "frame": "frame_000027"}, {"page": 0, "frame": "frame_000028"}, {"page": 0, "frame": "frame_000029"}, {"page": 0, "frame": "frame_000030"}, {"page": 0, "frame": "frame_000031"}, {"page": 0, "frame": "frame_000032"}, {"page": 0, "frame": "frame_000033"}, {"page": 0, "frame": "frame_000034"}, {"page": 0, "frame": "frame_000035"}, {"page": 0, "frame": "frame_000036"}, {"page": 0, "frame": "frame_000037"}, {"page": 0, "frame": "frame_000038"}, {"page": 0, "frame": "frame_000039"}, {"page": 0, "frame": "frame_000040"}, {"page": 0, "frame": "frame_000041"}, {"page": 0, "frame": "frame_000042"}, {"page": 0, "frame": "frame_000043"}, {"page": 0, "frame": "frame_000044"}, {"page": 0, "frame": "frame_000045"}, {"page": 0, "frame": "frame_000046"}, {"page": 0, "frame": "frame_000047"}, {"page": 0, "frame": "frame_000048"}, {"page": 0, "frame": "frame_000049"}, {"page": 0, "frame": "frame_000050"}, {"page": 0, "frame": "frame_000051"}, {"page": 0, "frame": "frame_000052"}, {"page": 0, "frame": "frame_000053"}, {"page": 0, "frame": "frame_000054"}, {"page": 0, "frame": "frame_000055"}, {"page": 0, "frame": "frame_000056"}, {"page": 0, "frame": "frame_000057"}, {"page": 0, "frame": "frame_000058"}, {"page": 0, "frame": "frame_000059"}, {"page": 0, "frame": "frame_000060"}, {"page": 0, "frame": "frame_000061"}, {"page": 0, "frame": "frame_000062"}, {"page": 0, "frame": "frame_000063"}, {"page": 0, "frame": "frame_000064"}, {"page": 0, "frame": "frame_000065"}, {"page": 0, "frame": "frame_000066"}, {"page": 0, "frame": "frame_000067"}, {"page": 0, "frame": "frame_000068"}, {"page": 0, "frame": "frame_000069"}, {"page": 0, "frame": "frame_000070"}, {"page": 0, "frame": "frame_000071"}];
+export function preloadVideoSprites(scene, basePath, texturePrefix = "video") {
+  const base = basePath.replace(/\/$/, "");
+  for (const page of pages) {
+    scene.load.atlas(`${texturePrefix}_p${page.index}`, `${base}/${page.image}`, `${base}/${page.atlas}`);
+  }
+}
+export function createVideoAnimation(scene, animationKey, texturePrefix = "video", repeat = -1) {
+  return scene.anims.create({
+    key: animationKey,
+    frames: sequence.map(frame => ({key: `${texturePrefix}_p${frame.page}`, frame: frame.frame})),
+    frameRate: 12.0,
+    repeat
+  });
+}

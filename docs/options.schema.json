@@ -1,0 +1,193 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Sprite sheet conversion options",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "fps": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "default": null,
+      "exclusiveMinimum": 0,
+      "description": "Uniform sample rate, default 12 when frame_count is omitted."
+    },
+    "frame_count": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "default": null,
+      "minimum": 1,
+      "description": "Exact frame count sampled uniformly across the selected time range; mutually exclusive with fps."
+    },
+    "start": {
+      "type": "number",
+      "default": 0.0,
+      "minimum": 0
+    },
+    "end": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "default": null
+    },
+    "frame_width": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "default": null,
+      "minimum": 1
+    },
+    "frame_height": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "default": null,
+      "minimum": 1
+    },
+    "fit": {
+      "type": "string",
+      "default": "contain",
+      "enum": [
+        "contain",
+        "cover",
+        "stretch"
+      ]
+    },
+    "resample": {
+      "type": "string",
+      "default": "nearest",
+      "enum": [
+        "nearest",
+        "lanczos"
+      ]
+    },
+    "columns": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "default": null,
+      "minimum": 1
+    },
+    "rows": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "default": null,
+      "minimum": 1
+    },
+    "padding": {
+      "type": "integer",
+      "default": 0,
+      "minimum": 0
+    },
+    "spacing": {
+      "type": "integer",
+      "default": 0,
+      "minimum": 0
+    },
+    "max_sheet_size": {
+      "type": "integer",
+      "default": 4096,
+      "minimum": 1
+    },
+    "max_frames": {
+      "type": "integer",
+      "default": 600,
+      "minimum": 1
+    },
+    "max_pixels": {
+      "type": "integer",
+      "default": 64000000,
+      "minimum": 1
+    },
+    "key_color": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "default": null,
+      "description": "Six-digit RGB hex, optionally prefixed with # or 0x; null preserves existing alpha/background."
+    },
+    "similarity": {
+      "type": "number",
+      "default": 0.12,
+      "minimum": 0.01,
+      "maximum": 1
+    },
+    "blend": {
+      "type": "number",
+      "default": 0.04,
+      "minimum": 0,
+      "maximum": 1
+    },
+    "despill": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "default": null,
+      "enum": [
+        "green",
+        "blue",
+        null
+      ]
+    },
+    "trim": {
+      "type": "boolean",
+      "default": false,
+      "description": "Crop all frames to one shared alpha bounding box, preserving alignment."
+    },
+    "format": {
+      "type": "string",
+      "default": "texturepacker-hash",
+      "enum": [
+        "json",
+        "texturepacker-hash",
+        "texturepacker-array",
+        "phaser",
+        "unity",
+        "unreal-paper2d"
+      ]
+    },
+    "pixels_per_unit": {
+      "type": "number",
+      "default": 100.0,
+      "exclusiveMinimum": 0,
+      "description": "Unity sprite world scale; also recorded as a suggested Paper2D import setting."
+    },
+    "pivot_x": {
+      "type": "number",
+      "default": 0.5,
+      "minimum": 0,
+      "maximum": 1
+    },
+    "pivot_y": {
+      "type": "number",
+      "default": 0.5,
+      "minimum": 0,
+      "maximum": 1,
+      "description": "Normalized pivot measured from the bottom. Converted to Paper2D's top-origin pivot on export."
+    },
+    "preview": {
+      "type": "boolean",
+      "default": true
+    },
+    "overwrite": {
+      "type": "boolean",
+      "default": false
+    },
+    "timeout": {
+      "type": "number",
+      "default": 300.0,
+      "exclusiveMinimum": 0
+    }
+  }
+}

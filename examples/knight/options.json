@@ -1,0 +1,13 @@
+{
+  "end": 6,
+  "frame_count": 72,
+  "columns": 12,
+  "rows": 6,
+  "key_color": "00B140",
+  "similarity": 0.12,
+  "blend": 0.04,
+  "despill": "green",
+  "resample": "lanczos",
+  "format": "phaser",
+  "max_sheet_size": 8192
+}

@@ -1,0 +1,12 @@
+{
+  "frame_count": 24,
+  "frame_width": 64,
+  "frame_height": 64,
+  "columns": 6,
+  "rows": 4,
+  "key_color": "00B140",
+  "similarity": 0.12,
+  "blend": 0.04,
+  "despill": "green",
+  "format": "texturepacker-hash"
+}

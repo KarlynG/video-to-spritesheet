@@ -1,0 +1,4 @@
+interface:
+  display_name: "Video to Sprite Sheet"
+  short_description: "Convert videos into verified sprite sheets and atlases"
+  default_prompt: "Use $video-to-spritesheet to convert this video into a sprite sheet matching my requested dimensions and layout."
